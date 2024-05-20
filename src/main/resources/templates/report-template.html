@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Empleado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    h3 {
+      margin-top: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    .icon {
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<h1>Reporte de Productos</h1>
+<br>
+<h3><i class="fas fa-briefcase icon"></i>&nbsp; Listado de Automoviles</h3>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Año Fabricación</th>
+    <th>Num Puertas</th>
+    <th>Precio</th>
+    <th>Color</th>
+    <th>Marca</th>
+    <th>Motor</th>
+  </tr>
+  <tr th:each="automovil : ${listaAutomovil}">
+
+    <td th:text="${automovil.getId()}"></td>
+    <td th:text="${automovil.getAnioFabricacion()}"></td>
+    <td th:text="${automovil.getNumPuertas()}"></td>
+    <td th:text="${automovil.getPrecio()}"></td>
+    <td th:text="${automovil.getColor()}"></td>
+    <td th:text="${automovil.getMarca()}"></td>
+    <td th:text="${automovil.getMotor()}"></td>
+  </tr>
+</table>
+<br>
+
+</body>
+</html>
